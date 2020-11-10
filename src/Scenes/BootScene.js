@@ -6,7 +6,10 @@ export default class BootScene extends Phaser.Scene {
   }
 
   preload() {
-    this.load.image('logo', '../src/assets/logo11.png');
+    this.load.spritesheet('logo', '../src/assets/destroyed.png', {
+      frameWidth: 142,
+      frameHeight: 142,
+    });
   }
 
   create() {
