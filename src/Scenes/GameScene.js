@@ -1,5 +1,4 @@
 import Phaser from 'phaser';
-import ship from '../assets/ship.png';
 
 export default class GameScene extends Phaser.Scene {
   constructor() {
@@ -12,7 +11,8 @@ export default class GameScene extends Phaser.Scene {
   }
 
   preload() {
-    this.load.spritesheet('playerShip', ship, {
+    this.load.image('background1', '../src/assets/background1.png');
+    this.load.spritesheet('playerShip', '../src/assets/ship.png', {
       frameWidth: 16,
       frameHeight: 24,
     });
@@ -44,8 +44,9 @@ export default class GameScene extends Phaser.Scene {
   }
 
   create() {
-    this.addPlayerShip();
+    this.add.image(400, 300, 'background1');
 
+    this.addPlayerShip();
     this.cursorKeys = this.input.keyboard.createCursorKeys();
   }
 

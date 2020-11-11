@@ -1,8 +1,7 @@
 import Phaser from 'phaser';
 
 export default {
-  type: Phaser.AUTO,
-  parent: 'phaser-example',
+  type: Phaser.WEBGL,
   width: 800,
   height: 600,
   physics: {
@@ -11,4 +10,6 @@ export default {
       gravity: { x: 0, y: 0 },
     },
   },
+  pixelArt: true,
+  roundPixels: true,
 };
