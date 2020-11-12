@@ -14,8 +14,8 @@ export default class Entity extends Phaser.GameObjects.Sprite {
     if (!this.getData('isDead')) {
       this.setTexture('explosion');
       this.play('explosion');
-      this.scene.SoundEffects.explosions[Phaser.Math.Between(
-        0, this.scene.SoundEffects.explosions.length - 1,
+      this.scene.soundEffects.explosions[Phaser.Math.Between(
+        0, this.scene.soundEffects.explosions.length - 1,
       )].play();
       if (this.shootTimer !== undefined) {
         if (this.shootTimer) {

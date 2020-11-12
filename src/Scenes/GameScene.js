@@ -147,9 +147,18 @@ export default class GameScene extends Phaser.Scene {
     }
   }
 
+  addSoundEffects() {
+    this.soundEffects = {
+      explosions: [
+        this.sound.add('explodeSound0'),
+        this.sound.add('explodeSound1'),
+      ],
+      laser: this.sound.add('laserSound'),
+    };
+  }
+
   create() {
     this.add.image(400, 300, 'background1');
-
     this.anims.create({
       key: 'playerShip',
       frames: this.anims.generateFrameNumbers('playerShip'),
@@ -185,14 +194,7 @@ export default class GameScene extends Phaser.Scene {
       repeat: 0,
     });
 
-    this.SoundEffects = {
-      explosions: [
-        this.sound.add('explodeSound0'),
-        this.sound.add('explodeSound1'),
-      ],
-      laser: this.sound.add('laserSound'),
-    };
-
+    this.addSoundEffects();
     this.addPlayerShip();
 
     this.cursorKeys = this.input.keyboard.createCursorKeys();
