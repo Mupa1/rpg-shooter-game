@@ -10,7 +10,7 @@ export default class Player extends Entity {
     this.setData('isShooting', false);
     this.setData('timerShootDelay', 10);
     this.setData('timerShootTick', this.getData('timerShootDelay') - 1);
-    this.play('playerShip');
+    this.play('playerJet');
   }
 
   moveUp() {

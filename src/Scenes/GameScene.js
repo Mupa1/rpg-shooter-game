@@ -13,17 +13,17 @@ export default class GameScene extends Phaser.Scene {
     this.height = this.game.config.height;
   }
 
-  addPlayerShip() {
+  addPlayerJet() {
     this.player = new Player(
       this,
       (this.width / 2) - 8,
       this.height - 64,
-      'playerShip',
+      'playerJet',
     );
     this.player.setScale(2);
   }
 
-  movePlayerShip() {
+  movePlayerJet() {
     if (this.cursorKeys.left.isDown) {
       this.player.moveLeft();
     } else if (this.cursorKeys.right.isDown) {
@@ -162,8 +162,8 @@ export default class GameScene extends Phaser.Scene {
   create() {
     this.add.image(400, 300, 'background1');
     this.anims.create({
-      key: 'playerShip',
-      frames: this.anims.generateFrameNumbers('playerShip'),
+      key: 'playerJet',
+      frames: this.anims.generateFrameNumbers('playerJet'),
       frameRate: 20,
       repeat: -1,
     });
@@ -176,8 +176,8 @@ export default class GameScene extends Phaser.Scene {
     });
 
     this.anims.create({
-      key: 'enemyShip',
-      frames: this.anims.generateFrameNumbers('enemyShip'),
+      key: 'enemyJet',
+      frames: this.anims.generateFrameNumbers('enemyJet'),
       frameRate: 20,
       repeat: -1,
     });
@@ -197,7 +197,7 @@ export default class GameScene extends Phaser.Scene {
     });
 
     this.addSoundEffects();
-    this.addPlayerShip();
+    this.addPlayerJet();
 
     this.cursorKeys = this.input.keyboard.createCursorKeys();
     this.keySpace = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
@@ -214,7 +214,7 @@ export default class GameScene extends Phaser.Scene {
 
   update() {
     this.player.update();
-    this.movePlayerShip();
+    this.movePlayerJet();
     this.removePastScreenEnemies();
     this.removePastScreenEnemyLaser();
     this.removePastScreenPlayerLaser();

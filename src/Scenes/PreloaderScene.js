@@ -10,7 +10,6 @@ export default class PreloaderScene extends Phaser.Scene {
   }
 
   preload() {
-    this.add.image(400, 200, 'logo');
     this.load.image('blueButton1', '../src/assets/ui/blue_button02.png');
     this.load.image('blueButton2', '../src/assets/ui/blue_button03.png');
     this.load.image('phaserLogo', '../src/assets/destroyed.png');
@@ -21,7 +20,7 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.image('background1', '../src/assets/background1.png');
     this.load.image('beastLaser', '../src/assets/beastLaser.png');
 
-    this.load.spritesheet('playerShip', '../src/assets/ship.png', {
+    this.load.spritesheet('playerJet', '../src/assets/jet.png', {
       frameWidth: 16,
       frameHeight: 24,
     });
@@ -31,7 +30,7 @@ export default class PreloaderScene extends Phaser.Scene {
       frameHeight: 64,
     });
 
-    this.load.spritesheet('enemyShip', '../src/assets/enemyShip.png', {
+    this.load.spritesheet('enemyJet', '../src/assets/enemyJet.png', {
       frameWidth: 32,
       frameHeight: 16,
     });
@@ -49,6 +48,21 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.audio('explodeSound0', '../src/assets/explodeSound0.wav');
     this.load.audio('explodeSound1', '../src/assets/explodeSound1.wav');
     this.load.audio('laserSound', '../src/assets/laserSound.wav');
+
+    this.logo = this.add
+      .sprite((this.scale.width * 0.5), (this.scale.height * 0.5) * 0.5, 'logo', 0)
+      .setScale(0.7, 0.7);
+
+    if (!this.anims.get('logo')) {
+      this.anims.create({
+        key: 'logo',
+        frames: this.anims.generateFrameNames('logo'),
+        frameRate: 7.5,
+        repeat: -1,
+      });
+    }
+
+    this.logo.anims.play('logo');
 
     const progressBar = this.add.graphics();
     const progressBox = this.add.graphics();

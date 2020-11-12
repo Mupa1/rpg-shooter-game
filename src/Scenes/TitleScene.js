@@ -1,5 +1,4 @@
 import Phaser from 'phaser';
-import config from '../Config/config';
 
 export default class TitleScene extends Phaser.Scene {
   constructor() {
@@ -7,46 +6,71 @@ export default class TitleScene extends Phaser.Scene {
   }
 
   create() {
-    this.gameButton = this.add.sprite(100, 200, 'blueButton1').setInteractive();
-    this.centerButton(this.gameButton, 1);
+    const width = this.game.config.width * 0.5;
 
-    this.gameText = this.add.text(0, 0, 'Play', { fontSize: '32px', fill: '#fff' });
-    this.centerButtonText(this.gameText, this.gameButton);
+    this.title = this.add.text(width, 120, 'SHOOTER GAME', {
+      fontSize: 48,
+      fontStyle: 'bold',
+      color: '#ffffff',
+      align: 'center',
+    });
+    this.title.setOrigin(0.5);
+
+    const button = (scene, positionX, positionY, btnDetail, textSize) => {
+      const button = scene.add.text(positionX, positionY, btnDetail, {
+        fontSize: textSize,
+      });
+      button.setOrigin(0.5, 0);
+      button.setInteractive();
+      return button;
+    };
+
+    this.gameButton = button(
+      this,
+      width,
+      200,
+      'START',
+      24,
+    );
 
     this.gameButton.on('pointerdown', () => {
       this.scene.start('Game');
     });
 
-    this.optionsButton = this.add.sprite(300, 200, 'blueButton1').setInteractive();
-    this.centerButton(this.optionsButton);
-
-    this.optionsText = this.add.text(0, 0, 'Options', { fontSize: '32px', fill: '#fff' });
-    this.centerButtonText(this.optionsText, this.optionsButton);
-
-    this.optionsButton.on('pointerdown', () => {
-      this.scene.start('Options');
-    });
-
-    this.input.on('pointerover', (event, gameObjects) => {
-      gameObjects[0].setTexture('blueButton2');
-    });
-
-    this.input.on('pointerout', (event, gameObjects) => {
-      gameObjects[0].setTexture('blueButton1');
-    });
-  }
-
-  centerButton(gameObject, offset = 0) {
-    Phaser.Display.Align.In.Center(
-      gameObject,
-      this.add.zone(
-        config.width / 2, config.height / 2 - offset * 100, config.width, config.height,
-      ),
+    this.gameButton = button(
+      this,
+      width,
+      250,
+      'HOW TO PLAY',
+      24,
     );
-  }
 
-  // eslint-disable-next-line class-methods-use-this
-  centerButtonText(gameText, gameButton) {
-    Phaser.Display.Align.In.Center(gameText, gameButton);
+    this.gameButton.on('pointerdown', () => {
+      this.scene.start('Instructions');
+    });
+
+    this.gameButton = button(
+      this,
+      width,
+      300,
+      'CREDITS',
+      24,
+    );
+
+    this.gameButton.on('pointerdown', () => {
+      this.scene.start('Game');
+    });
+
+    this.gameButton = button(
+      this,
+      width,
+      350,
+      'LEADERBOARD',
+      24,
+    );
+
+    this.gameButton.on('pointerdown', () => {
+      this.scene.start('Game');
+    });
   }
 }
