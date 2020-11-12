@@ -36,6 +36,20 @@ export default class PreloaderScene extends Phaser.Scene {
       frameHeight: 16,
     });
 
+    this.load.spritesheet('playerLaser', '../src/assets/playerLaser.png', {
+      frameWidth: 32,
+      frameHeight: 32,
+    });
+
+    this.load.spritesheet('explosion', '../src/assets/explosion.png', {
+      frameWidth: 16,
+      frameHeight: 16,
+    });
+
+    this.load.audio('explodeSound0', '../src/assets/explodeSound0.wav');
+    this.load.audio('explodeSound1', '../src/assets/explodeSound1.wav');
+    this.load.audio('laserSound', '../src/assets/laserSound.wav');
+
     const progressBar = this.add.graphics();
     const progressBox = this.add.graphics();
     progressBox.fillStyle(0x222222, 0.8);
