@@ -50,7 +50,7 @@ export default class Player extends Entity {
     this.scene.time.addEvent({
       delay: 1000,
       callback() {
-        this.scene.scene.start('menu');
+        this.scene.scene.start('Title');
       },
       callbackScope: this,
       loop: false,

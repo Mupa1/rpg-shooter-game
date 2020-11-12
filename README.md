@@ -1,7 +1,7 @@
 # Shooter Game
 This project is an RPG shooter game built with Phaser 3, a JavaScript game framework designed to create 2D games.
 
-![screenshot](src/images/screenshot.png)
+![screenshot](src/assets/preview.png)
 
 ## Built With
 
@@ -16,9 +16,9 @@ This project is an RPG shooter game built with Phaser 3, a JavaScript game frame
 
 ## How to play
 
-- Drive the ship with your keyboard arrows.
-- Use the spacebar to shoot and kill enemies
-- Collect stars to increase points.
+- Drive the jet with your keyboard arrows.
+- Use the spacebar to shoot and kill the desert enemy beasts.
+- Avoid getting shot or colliding with the enemy.
 
 ## Getting Started
 
