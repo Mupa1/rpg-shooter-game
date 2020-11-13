@@ -1,4 +1,4 @@
-const Helpers = (() => {
+const Text = (() => {
   const text = (scene, positionX, positionY, btnDetail, textSize) => {
     const text = scene.add.text(positionX, positionY, btnDetail, {
       fontSize: textSize,
@@ -12,4 +12,4 @@ const Helpers = (() => {
   };
 })();
 
-export default Helpers;
+export default Text;

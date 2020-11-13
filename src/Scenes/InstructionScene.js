@@ -1,6 +1,6 @@
 import Phaser from 'phaser';
 
-import Helpers from '../js/Helpers';
+import Text from '../js/text';
 
 export default class InstructionScene extends Phaser.Scene {
   constructor() {
@@ -10,7 +10,7 @@ export default class InstructionScene extends Phaser.Scene {
   create() {
     const width = this.game.config.width * 0.5;
 
-    this.title = Helpers.text(
+    this.title = Text.text(
       this,
       width,
       120,
@@ -18,7 +18,7 @@ export default class InstructionScene extends Phaser.Scene {
       48,
     );
 
-    this.instruction1 = Helpers.text(
+    this.instruction1 = Text.text(
       this,
       width,
       200,
@@ -26,7 +26,7 @@ export default class InstructionScene extends Phaser.Scene {
       24,
     );
 
-    this.instruction2 = Helpers.text(
+    this.instruction2 = Text.text(
       this,
       width,
       250,
@@ -34,7 +34,7 @@ export default class InstructionScene extends Phaser.Scene {
       24,
     );
 
-    this.instruction3 = Helpers.text(
+    this.instruction3 = Text.text(
       this,
       width,
       300,
@@ -43,14 +43,14 @@ export default class InstructionScene extends Phaser.Scene {
     );
 
     this.gameButton = this.add.sprite(width - 100, 400, 'blueButton1').setInteractive();
-    this.gameText = Helpers.text(this, 0, 0, 'Play', 32);
+    this.gameText = Text.text(this, 0, 0, 'Play', 32);
     this.centerButtonText(this.gameText, this.gameButton);
     this.gameButton.on('pointerdown', () => {
       this.scene.start('Game');
     });
 
     this.backButton = this.add.sprite(width + 100, 400, 'blueButton1').setInteractive();
-    this.backText = Helpers.text(this, 0, 0, 'Back', 32);
+    this.backText = Text.text(this, 0, 0, 'Back', 32);
     this.centerButtonText(this.backText, this.backButton);
     this.backButton.on('pointerdown', () => {
       this.scene.start('Title');

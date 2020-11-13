@@ -1,4 +1,77 @@
 body {
-  text-align: center;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+canvas {
+  position: relative;
   margin: auto;
+  text-align: center;
+}
+
+#input {
+  margin-bottom: 20px;
+  height: 50px;
+  font-size: 24px;
+  width: 300px;
+  outline: none;
+  border: 1px solid grey;
+  border-bottom: 2px solid white;
+  background-color: transparent;
+  color: white;
+  text-align: center;
+}
+
+button {
+  font-family: Courier, monospace;
+  border: none;
+  background: #1ba0de;
+  color: white;
+  font-size: 24px;
+  border-radius: 5px;
+  height: 49px;
+  width: 190px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+p {
+  color: orangered;
+  font-size: 32px;
+}
+
+#form {
+  position: absolute;
+  top: 250px;
+  left: 250px;
+  text-align: center;
+}
+
+#input::placeholder {
+  color: #999;
+  margin-left: 10%;
+  text-align: center;
+}
+
+#input::-webkit-input-placeholder {
+  text-align: center;
+}
+
+#response {
+  font-size: 32px;
+  color: greenyellow;
+  margin-bottom: 3px;
+  width: 300px;
+  text-align: center;
+}
+
+#submitting {
+  width: 300px;
+  font-size: 32px;
+  color: white;
+  margin-bottom: 3px;
+  text-align: center;
 }
