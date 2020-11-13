@@ -7,6 +7,7 @@ import BootScene from './Scenes/BootScene';
 import PreloaderScene from './Scenes/PreloaderScene';
 import TitleScene from './Scenes/TitleScene';
 import InstructionScene from './Scenes/InstructionScene';
+import GameOverScene from './Scenes/GameOverScene';
 
 
 class Game extends Phaser.Game {
@@ -16,6 +17,7 @@ class Game extends Phaser.Game {
     this.scene.add('Preloader', PreloaderScene);
     this.scene.add('Title', TitleScene);
     this.scene.add('Instructions', InstructionScene);
+    this.scene.add('GameOver', GameOverScene);
     this.scene.add('Game', GameScene);
     this.scene.start('Boot');
   }

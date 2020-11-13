@@ -1,5 +1,6 @@
 import Phaser from 'phaser';
 
+import LocalStorage from '../js/LocalStorage';
 import Player from '../js/Player';
 import Beast from '../js/Beast';
 
@@ -11,6 +12,8 @@ export default class GameScene extends Phaser.Scene {
   init() {
     this.width = this.game.config.width;
     this.height = this.game.config.height;
+    this.score = 0;
+    this.scoreText = undefined;
   }
 
   addPlayerJet() {
@@ -69,6 +72,9 @@ export default class GameScene extends Phaser.Scene {
       if (enemy) {
         if (enemy.onDestroy !== undefined) {
           enemy.onDestroy();
+          this.score += 10;
+          this.scoreText.setText(`Score: ${this.score}`);
+          LocalStorage.saveScoreLocalStorage(this.score);
         }
 
         enemy.explode(true);
@@ -159,8 +165,12 @@ export default class GameScene extends Phaser.Scene {
     };
   }
 
+
   create() {
     this.add.image(400, 300, 'background1');
+
+    this.scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
+
     this.anims.create({
       key: 'playerJet',
       frames: this.anims.generateFrameNumbers('playerJet'),
