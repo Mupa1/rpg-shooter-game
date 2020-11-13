@@ -17,7 +17,7 @@
   "bugs": {
     "url": "https://github.com/Mupa1/rpg-shooter-game/issues"
   },
-  "homepage": "./",
+  "homepage": "https://github.com/Mupa1/rpg-shooter-game#readme",
   "devDependencies": {
     "@babel/core": "^7.7.2",
     "@babel/preset-env": "^7.7.1",
@@ -33,8 +33,10 @@
   },
   "dependencies": {
     "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^5.0.1",
     "html-webpack-plugin": "^3.2.0",
     "phaser": "^3.20.1",
+    "style-loader": "^2.0.0",
     "terser-webpack-plugin": "^2.2.1",
     "webpack": "^4.41.2",
     "webpack-merge": "^4.2.2"

@@ -12,8 +12,6 @@ This project is an RPG shooter game built with Phaser 3, a JavaScript game frame
 - Leaderboard API service
 - Jest
 
-[Live Link]()
-
 ## How to play
 
 - Drive the jet with your keyboard arrows.
