@@ -1,49 +1,57 @@
 import Phaser from 'phaser';
 
+import Helpers from '../js/Helpers';
+
 export default class InstructionScene extends Phaser.Scene {
   constructor() {
     super('Instructions');
   }
 
   create() {
-    this.width = this.game.config.width * 0.5;
+    const width = this.game.config.width * 0.5;
 
-    this.title = this.add.text(this.width, 120, 'HOW TO PLAY', {
-      fontSize: 48,
-      fontStyle: 'bold',
-    });
-    this.title.setOrigin(0.5);
+    this.title = Helpers.text(
+      this,
+      width,
+      120,
+      'HOW TO PLAY',
+      48,
+    );
 
-    this.instruction1 = this.add.text(this.width, 200, 'Move the jet up/down, left/right using arrow keys', {
-      fontSize: 24,
-    });
-    this.instruction1.setOrigin(0.5);
+    this.instruction1 = Helpers.text(
+      this,
+      width,
+      200,
+      'Move the jet up/down, left/right using arrow keys',
+      24,
+    );
 
-    this.instruction2 = this.add.text(this.width, 250, 'Use the spacebar to shoot desert beasts', {
-      fontSize: 24,
-    });
-    this.instruction2.setOrigin(0.5);
+    this.instruction2 = Helpers.text(
+      this,
+      width,
+      250,
+      'Use the spacebar to shoot desert beasts',
+      24,
+    );
 
-    this.instruction3 = this.add.text(this.width, 300, 'Ready to Play?', {
-      fontSize: 30,
-    });
-    this.instruction3.setOrigin(0.5);
+    this.instruction3 = Helpers.text(
+      this,
+      width,
+      300,
+      'Ready to Play?',
+      30,
+    );
 
-
-    this.gameButton = this.add.sprite(this.width - 100, 400, 'blueButton1').setInteractive();
-
-    this.gameText = this.add.text(0, 0, 'Play', { fontSize: '32px', fill: '#fff' });
+    this.gameButton = this.add.sprite(width - 100, 400, 'blueButton1').setInteractive();
+    this.gameText = Helpers.text(this, 0, 0, 'Play', 32);
     this.centerButtonText(this.gameText, this.gameButton);
-
     this.gameButton.on('pointerdown', () => {
       this.scene.start('Game');
     });
 
-    this.backButton = this.add.sprite(this.width + 100, 400, 'blueButton1').setInteractive();
-
-    this.backText = this.add.text(0, 0, 'Back', { fontSize: '32px', fill: '#fff' });
+    this.backButton = this.add.sprite(width + 100, 400, 'blueButton1').setInteractive();
+    this.backText = Helpers.text(this, 0, 0, 'Back', 32);
     this.centerButtonText(this.backText, this.backButton);
-
     this.backButton.on('pointerdown', () => {
       this.scene.start('Title');
     });

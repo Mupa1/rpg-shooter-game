@@ -1,6 +1,7 @@
 import Phaser from 'phaser';
 
 import LocalStorage from '../js/LocalStorage';
+import Helpers from '../js/Helpers';
 
 export default class GameOverScene extends Phaser.Scene {
   constructor() {
@@ -8,37 +9,38 @@ export default class GameOverScene extends Phaser.Scene {
   }
 
   create() {
-    this.width = this.game.config.width * 0.5;
+    const width = this.game.config.width * 0.5;
 
-    this.title = this.add.text(this.width, 120, 'Game Over', {
-      fontSize: 48,
-      fontStyle: 'bold',
-    });
-    this.title.setOrigin(0.5);
+    this.title = Helpers.text(
+      this,
+      width,
+      120,
+      'Game Over',
+      48,
+    );
 
     const score = LocalStorage.getScoreLocalStorage();
     LocalStorage.clearLocalStorage();
 
-    this.instruction1 = this.add.text(this.width, 200, `Your score is: ${score}`, {
-      fontSize: 24,
-    });
-    this.instruction1.setOrigin(0.5);
+    this.score = Helpers.text(
+      this,
+      width,
+      200,
+      `Your score is: ${score}`,
+      24,
+    );
 
-    this.gameButton = this.add.sprite(this.width - 100, 400, 'blueButton1').setInteractive();
-
-    this.gameText = this.add.text(0, 0, 'Play Again', { fontSize: '26px', fill: '#fff' });
+    this.gameButton = this.add.sprite(width - 100, 400, 'blueButton1').setInteractive();
+    this.gameText = Helpers.text(this, 0, 0, 'Play Again', 26);
     this.centerButtonText(this.gameText, this.gameButton);
-
     this.gameButton.on('pointerdown', () => {
       this.scene.start('Game');
     });
 
-    this.backButton = this.add.sprite(this.width + 100, 400, 'blueButton1').setInteractive();
-
-    this.backText = this.add.text(0, 0, 'LeaderBoard', { fontSize: '26px', fill: '#fff' });
-    this.centerButtonText(this.backText, this.backButton);
-
-    this.backButton.on('pointerdown', () => {
+    this.LeaderBoardButton = this.add.sprite(width + 100, 400, 'blueButton1').setInteractive();
+    this.LeaderBoardText = Helpers.text(this, 0, 0, 'LeaderBoard', 26);
+    this.centerButtonText(this.LeaderBoardText, this.LeaderBoardButton);
+    this.LeaderBoardButton.on('pointerdown', () => {
       this.scene.start('Title');
     });
 
