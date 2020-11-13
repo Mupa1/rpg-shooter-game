@@ -1,6 +1,6 @@
 import Phaser from 'phaser';
 import scoreAPI from '../js/scoreAPI';
-import Dom from '../js/dom';
+import Dom from '../js/Dom';
 
 import LocalStorage from '../js/LocalStorage';
 import Text from '../js/text';
