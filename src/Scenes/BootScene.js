@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import destroyed from '../assets/destroyed.png';
 
 export default class BootScene extends Phaser.Scene {
   constructor() {
@@ -6,7 +7,7 @@ export default class BootScene extends Phaser.Scene {
   }
 
   preload() {
-    this.load.spritesheet('logo', '../src/assets/destroyed.png', {
+    this.load.spritesheet('logo', destroyed, {
       frameWidth: 142,
       frameHeight: 142,
     });

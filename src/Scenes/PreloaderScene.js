@@ -1,5 +1,19 @@
 import Phaser from 'phaser';
 
+import blueButton1 from '../assets/ui/blue_button02.png';
+import blueButton2 from '../assets/ui/blue_button03.png';
+import destroyed from '../assets/destroyed.png';
+import townTheme from '../assets/TownTheme.mp3';
+import background1 from '../assets/background1.png';
+import beastLaser from '../assets/beastLaser.png';
+import playerJet from '../assets/jet.png';
+import beast from '../assets/beast.png';
+import playerLaser from '../assets/playerLaser.png';
+import explosion from '../assets/explosion.png';
+import explodeSound0 from '../assets/explodeSound0.wav';
+import explodeSound1 from '../assets/explodeSound1.wav';
+import laserSound from '../assets/laserSound.wav';
+
 export default class PreloaderScene extends Phaser.Scene {
   constructor() {
     super('Preloader');
@@ -10,44 +24,37 @@ export default class PreloaderScene extends Phaser.Scene {
   }
 
   preload() {
-    this.load.image('blueButton1', '../src/assets/ui/blue_button02.png');
-    this.load.image('blueButton2', '../src/assets/ui/blue_button03.png');
-    this.load.image('phaserLogo', '../src/assets/destroyed.png');
-    this.load.image('box', '../src/assets/ui/grey_box.png');
-    this.load.image('checkedBox', '../src/assets/ui/blue_boxCheckmark.png');
-    this.load.audio('bgMusic', ['../src/assets/TownTheme.mp3']);
+    this.load.image('blueButton1', blueButton1);
+    this.load.image('blueButton2', blueButton2);
+    this.load.image('phaserLogo', destroyed);
+    this.load.audio('bgMusic', [townTheme]);
 
-    this.load.image('background1', '../src/assets/background1.png');
-    this.load.image('beastLaser', '../src/assets/beastLaser.png');
+    this.load.image('background1', background1);
+    this.load.image('beastLaser', beastLaser);
 
-    this.load.spritesheet('playerJet', '../src/assets/jet.png', {
+    this.load.spritesheet('playerJet', playerJet, {
       frameWidth: 16,
       frameHeight: 24,
     });
 
-    this.load.spritesheet('beast', '../src/assets/beast.png', {
+    this.load.spritesheet('beast', beast, {
       frameWidth: 72,
       frameHeight: 64,
     });
 
-    this.load.spritesheet('enemyJet', '../src/assets/enemyJet.png', {
-      frameWidth: 32,
-      frameHeight: 16,
-    });
-
-    this.load.spritesheet('playerLaser', '../src/assets/playerLaser.png', {
+    this.load.spritesheet('playerLaser', playerLaser, {
       frameWidth: 32,
       frameHeight: 32,
     });
 
-    this.load.spritesheet('explosion', '../src/assets/explosion.png', {
+    this.load.spritesheet('explosion', explosion, {
       frameWidth: 16,
       frameHeight: 16,
     });
 
-    this.load.audio('explodeSound0', '../src/assets/explodeSound0.wav');
-    this.load.audio('explodeSound1', '../src/assets/explodeSound1.wav');
-    this.load.audio('laserSound', '../src/assets/laserSound.wav');
+    this.load.audio('explodeSound0', explodeSound0);
+    this.load.audio('explodeSound1', explodeSound1);
+    this.load.audio('laserSound', laserSound);
 
     this.logo = this.add
       .sprite((this.scale.width * 0.5), (this.scale.height * 0.5) * 0.5, 'logo', 0)
