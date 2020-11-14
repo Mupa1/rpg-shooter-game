@@ -5,7 +5,19 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --config webpack/prod.js ",
-    "start": "webpack-dev-server --config webpack/base.js --open"
+    "start": "webpack-dev-server --config webpack/base.js --open",
+    "test": "jest"
+  },
+  "jest": {
+    "setupFiles": [
+      "jest-canvas-mock"
+    ],
+    "setupFilesAfterEnv": [
+      "jest-expect-subclass"
+    ],
+    "moduleNameMapper": {
+      "\\.(gif|ttf|eot|svg|png|mp3)$": "<rootDir>/test/mocks/fileMock.js"
+    }
   },
   "repository": {
     "type": "git",
@@ -20,16 +32,19 @@
   "homepage": "https://github.com/Mupa1/rpg-shooter-game#readme",
   "devDependencies": {
     "@babel/core": "^7.7.2",
-    "@babel/preset-env": "^7.7.1",
     "@babel/plugin-transform-regenerator": "^7.12.1",
     "@babel/plugin-transform-runtime": "^7.12.1",
-    "babel-polyfill": "^6.26.0",
+    "@babel/preset-env": "^7.7.1",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.0.6",
+    "babel-polyfill": "^6.26.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-plugin-import": "^2.20.2",
     "file-loader": "^4.3.0",
+    "jest": "^26.6.3",
+    "jest-canvas-mock": "^2.3.0",
+    "jest-expect-subclass": "^1.0.1",
     "raw-loader": "^3.1.0",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.9.0"
