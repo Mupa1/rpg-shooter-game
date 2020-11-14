@@ -33,9 +33,15 @@ const Dom = (() => {
     }, 1000);
   };
 
+  const removeDomElements = () => {
+    const form = document.querySelector('#form');
+    form.parentNode.removeChild(form);
+  };
+
   return {
     nameform,
     submitButtonAction,
+    removeDomElements,
   };
 })();
 

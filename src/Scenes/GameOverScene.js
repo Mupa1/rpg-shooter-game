@@ -1,5 +1,4 @@
 import Phaser from 'phaser';
-import scoreAPI from '../js/scoreAPI';
 import Dom from '../js/Dom';
 
 import LocalStorage from '../js/LocalStorage';
@@ -8,8 +7,6 @@ import Text from '../js/text';
 export default class GameOverScene extends Phaser.Scene {
   constructor() {
     super('GameOver');
-    // eslint-disable-next-line no-unused-expressions
-    scoreAPI;
   }
 
   create() {
@@ -38,6 +35,7 @@ export default class GameOverScene extends Phaser.Scene {
     this.gameText = Text.text(this, 0, 0, 'Play Again', 26);
     this.centerButtonText(this.gameText, this.gameButton);
     this.gameButton.on('pointerdown', () => {
+      Dom.removeDomElements();
       this.scene.start('Game');
     });
 
@@ -45,7 +43,8 @@ export default class GameOverScene extends Phaser.Scene {
     this.LeaderBoardText = Text.text(this, 0, 0, 'LeaderBoard', 26);
     this.centerButtonText(this.LeaderBoardText, this.LeaderBoardButton);
     this.LeaderBoardButton.on('pointerdown', () => {
-      this.scene.start('Title');
+      Dom.removeDomElements();
+      this.scene.start('LeaderBoard');
     });
 
     this.input.on('pointerover', (event, gameObjects) => {
