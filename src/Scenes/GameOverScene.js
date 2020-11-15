@@ -31,7 +31,7 @@ export default class GameOverScene extends Phaser.Scene {
       24,
     );
 
-    this.gameButton = this.add.sprite(width - 100, 500, 'blueButton1').setInteractive();
+    this.gameButton = this.add.sprite(width - 200, 500, 'blueButton1').setInteractive();
     this.gameText = Text.text(this, 0, 0, 'Play Again', 26);
     this.centerButtonText(this.gameText, this.gameButton);
     this.gameButton.on('pointerdown', () => {
@@ -39,7 +39,15 @@ export default class GameOverScene extends Phaser.Scene {
       this.scene.start('Game');
     });
 
-    this.LeaderBoardButton = this.add.sprite(width + 100, 500, 'blueButton1').setInteractive();
+    this.menuButton = this.add.sprite(width, 500, 'blueButton1').setInteractive();
+    this.menuText = Text.text(this, 0, 0, 'Menu', 26);
+    this.centerButtonText(this.menuText, this.menuButton);
+    this.menuButton.on('pointerdown', () => {
+      Dom.removeDomElements();
+      this.scene.start('Title');
+    });
+
+    this.LeaderBoardButton = this.add.sprite(width + 200, 500, 'blueButton1').setInteractive();
     this.LeaderBoardText = Text.text(this, 0, 0, 'LeaderBoard', 26);
     this.centerButtonText(this.LeaderBoardText, this.LeaderBoardButton);
     this.LeaderBoardButton.on('pointerdown', () => {

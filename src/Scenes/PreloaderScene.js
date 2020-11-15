@@ -3,7 +3,7 @@ import Phaser from 'phaser';
 import blueButton1 from '../assets/ui/blue_button02.png';
 import blueButton2 from '../assets/ui/blue_button03.png';
 import destroyed from '../assets/destroyed.png';
-import townTheme from '../assets/TownTheme.mp3';
+import battleTheme from '../assets/battleTheme.mp3';
 import background1 from '../assets/background1.png';
 import beastLaser from '../assets/beastLaser.png';
 import playerJet from '../assets/jet.png';
@@ -27,7 +27,7 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.image('blueButton1', blueButton1);
     this.load.image('blueButton2', blueButton2);
     this.load.image('phaserLogo', destroyed);
-    this.load.audio('bgMusic', [townTheme]);
+    this.load.audio('bgMusic', [battleTheme]);
 
     this.load.image('background1', background1);
     this.load.image('beastLaser', beastLaser);

@@ -8,6 +8,8 @@ export default class TitleScene extends Phaser.Scene {
   create() {
     const width = this.game.config.width * 0.5;
 
+    this.musicConfiguration(this, 'bgMusic');
+
     this.title = this.add.text(width, 120, 'SHOOTER GAME', {
       fontSize: 48,
       fontStyle: 'bold',
