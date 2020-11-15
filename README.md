@@ -1,8 +1,6 @@
 # Shooter Game
 This project is an RPG shooter game built with Phaser 3, a JavaScript game framework designed to create 2D games.
 
-![screenshot](src/assets/preview.png)
-
 ## Built With
 
 - HTML/CSS
@@ -31,7 +29,6 @@ This project is an RPG shooter game built with Phaser 3, a JavaScript game frame
 #### Player Shooter Jet
 ![screenshot](src/assets/jet.png)
 
-
 #### Player Shooter Jet Laser
 ![screenshot](src/assets/playerLaser.png)
 
@@ -40,6 +37,9 @@ This project is an RPG shooter game built with Phaser 3, a JavaScript game frame
 
 #### Dragon Beast Laser
 ![screenshot](src/assets/beastLaser.png)
+
+#### Game Screen
+![screenshot](src/assets/preview.png)
 
 #### Loading Screen
 ![screenshot](src/assets/loadingScreen.gif)
@@ -59,8 +59,8 @@ This project is an RPG shooter game built with Phaser 3, a JavaScript game frame
 #### GameOver Screen
 ![screenshot](src/assets/gameOverScreen.png)
 
-#### Game Screen
-![screenshot](src/assets/preview.png)
+## Live Demo
+ [Link to live demo](https://mupa-shooter-game.netlify.app/) 
 
 ## Getting Started
 
@@ -76,6 +76,10 @@ To make changes open rpg-shooter-game directory in you favorite editor.
 
 ## Automated Test
  > npm run test
+
+ ## Potential future features
+ - Add Enemies.
+ - Extend gameplay functionality.
 
 ## Author
 
