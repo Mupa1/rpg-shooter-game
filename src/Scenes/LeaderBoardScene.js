@@ -14,9 +14,9 @@ export default class LeaderBoardScene extends Phaser.Scene {
     const response = await scoreAPI.getScores();
     const sortedScores = response.result.sort((a, b) => b.score - a.score);
     let player = '';
-    for (let i = 0; i < 10; i += 1) {
+    for (let i = 0; i < 6; i += 1) {
       player += `${i + 1}. ${sortedScores[i].user}: ${sortedScores[i].score
-      }\n`;
+      }\n\n`;
       if (i === sortedScores.length - 1) {
         break;
       }
@@ -27,15 +27,15 @@ export default class LeaderBoardScene extends Phaser.Scene {
       width,
       80,
       'TOP SCORES',
-      48,
+      42,
     );
 
     this.playerScore = Text.text(
       this,
       width,
-      300,
+      320,
       player,
-      32,
+      28,
     );
 
     this.LeaderBoardButton = this.add.sprite(width, 520, 'blueButton1').setInteractive();
