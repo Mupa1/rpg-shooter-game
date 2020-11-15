@@ -60,7 +60,10 @@ This project is an RPG shooter game built with Phaser 3, a JavaScript game frame
 ![screenshot](src/assets/gameOverScreen.png)
 
 ## Live Demo
- [Link to live demo](https://mupa-shooter-game.netlify.app/) 
+[Live demo link](https://mupa-shooter-game.netlify.app/)
+
+## Walkthrough Video
+[Walkthrough link](https://www.loom.com/share/9e43635ced154a7f95bd0eb70bfb54bb)
 
 ## Getting Started
 
