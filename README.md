@@ -14,9 +14,53 @@ This project is an RPG shooter game built with Phaser 3, a JavaScript game frame
 
 ## How to play
 
-- Drive the jet with your keyboard arrows.
-- Use the spacebar to shoot and kill the desert enemy beasts.
+- Drive the shooter jet with your keyboard arrows.
+
+  *  ⬅️ - Press the left arrow key to move left.
+  * ➡️ - Press the right arrow key to move right.
+  * ⬆️ - Press the up arrow key move up.
+  * ⬇️ - Press the down arrow key to move down.
+- Use the spacebar to shoot the desert enemy beasts to gain points.
 - Avoid getting shot or colliding with the enemy.
+
+## Game Design
+- I used the [space shooter pack](https://opengameart.org/content/space-ship-shooter-pixel-art-assets) from ansimuz for the background, player shooter jet, explosion, lasers and bolts.
+- I used a [flying dragon beast sprite](https://opengameart.org/content/flying-dragon-rework) from AntumDeluge.
+- I used a [battle theme](https://opengameart.org/content/battle-music) background music from Alexandr Zhelanov.
+
+#### Player Shooter Jet
+![screenshot](src/assets/jet.png)
+
+
+#### Player Shooter Jet Laser
+![screenshot](src/assets/playerLaser.png)
+
+#### Dragon Beast Enemy
+![screenshot](src/assets/beast.png)
+
+#### Dragon Beast Laser
+![screenshot](src/assets/beastLaser.png)
+
+#### Loading Screen
+![screenshot](src/assets/loadingScreen.gif)
+
+#### Menu Screen
+![screenshot](src/assets/menuScreen.png)
+
+#### Instuctions Screen
+![screenshot](src/assets/instructionsScreen.png)
+
+#### Credits Screen
+![screenshot](src/assets/creditsScreen.png)
+
+#### Leaderboard Screen
+![screenshot](src/assets/leaderboard.png)
+
+#### GameOver Screen
+![screenshot](src/assets/gameOverScreen.png)
+
+#### Game Screen
+![screenshot](src/assets/preview.png)
 
 ## Getting Started
 
@@ -31,7 +75,7 @@ To make changes open rpg-shooter-game directory in you favorite editor.
 - When you finish your changes, run npm run build to create the production files to the dist folder.
 
 ## Automated Test
- > No automated tests yet for this project.
+ > npm run test
 
 ## Author
 
