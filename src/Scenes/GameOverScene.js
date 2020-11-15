@@ -44,6 +44,7 @@ export default class GameOverScene extends Phaser.Scene {
     this.centerButtonText(this.menuText, this.menuButton);
     this.menuButton.on('pointerdown', () => {
       Dom.removeDomElements();
+      this.game.sound.stopAll();
       this.scene.start('Title');
     });
 
@@ -52,6 +53,7 @@ export default class GameOverScene extends Phaser.Scene {
     this.centerButtonText(this.LeaderBoardText, this.LeaderBoardButton);
     this.LeaderBoardButton.on('pointerdown', () => {
       Dom.removeDomElements();
+      this.game.sound.stopAll();
       this.scene.start('LeaderBoard');
     });
 

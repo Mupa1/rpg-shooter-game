@@ -53,6 +53,7 @@ export default class InstructionScene extends Phaser.Scene {
     this.backText = Text.text(this, 0, 0, 'Back', 32);
     this.centerButtonText(this.backText, this.backButton);
     this.backButton.on('pointerdown', () => {
+      this.game.sound.stopAll();
       this.scene.start('Title');
     });
 

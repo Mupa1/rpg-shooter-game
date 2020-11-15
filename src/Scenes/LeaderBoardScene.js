@@ -42,6 +42,7 @@ export default class LeaderBoardScene extends Phaser.Scene {
     this.LeaderBoardText = Text.text(this, 0, 0, 'Menu', 26);
     this.centerButtonText(this.LeaderBoardText, this.LeaderBoardButton);
     this.LeaderBoardButton.on('pointerdown', () => {
+      this.game.sound.stopAll();
       this.scene.start('Title');
     });
 
