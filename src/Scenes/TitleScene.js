@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import Sound from '../js/sound';
 
 export default class TitleScene extends Phaser.Scene {
   constructor() {
@@ -8,7 +9,7 @@ export default class TitleScene extends Phaser.Scene {
   create() {
     const width = this.game.config.width * 0.5;
 
-    this.musicConfiguration(this, 'bgMusic');
+    Sound.musicConfiguration(this, 'bgMusic');
 
     this.title = this.add.text(width, 120, 'SHOOTER GAME', {
       fontSize: 48,
@@ -60,7 +61,7 @@ export default class TitleScene extends Phaser.Scene {
     );
 
     this.gameButton.on('pointerdown', () => {
-      this.scene.start('Game');
+      this.scene.start('Credits');
     });
 
     this.gameButton = button(
