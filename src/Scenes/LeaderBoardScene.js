@@ -38,8 +38,15 @@ export default class LeaderBoardScene extends Phaser.Scene {
       28,
     );
 
-    this.LeaderBoardButton = this.add.sprite(width, 520, 'blueButton1').setInteractive();
-    this.LeaderBoardText = Text.text(this, 0, 0, 'Menu', 26);
+    this.gameButton = this.add.sprite(width - 100, 520, 'blueButton1').setInteractive();
+    this.gameText = Text.text(this, 0, 0, 'Play', 32);
+    this.centerButtonText(this.gameText, this.gameButton);
+    this.gameButton.on('pointerdown', () => {
+      this.scene.start('Game');
+    });
+
+    this.LeaderBoardButton = this.add.sprite(width + 100, 520, 'blueButton1').setInteractive();
+    this.LeaderBoardText = Text.text(this, 0, 0, 'Menu', 32);
     this.centerButtonText(this.LeaderBoardText, this.LeaderBoardButton);
     this.LeaderBoardButton.on('pointerdown', () => {
       this.game.sound.stopAll();
