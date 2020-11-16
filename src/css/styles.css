@@ -1,20 +1,26 @@
 body {
-  margin: 0;
+  /* margin: 0; */
   padding: 0;
   box-sizing: border-box;
+  margin: auto;
+  text-align: center;
 }
 
 canvas {
   position: relative;
   margin: auto;
   text-align: center;
+  width: 100%;
+  height: 100%;
+  max-width: 800px;
+  max-height: 600px;
 }
 
 #input {
   margin-bottom: 20px;
   height: 50px;
   font-size: 24px;
-  width: 300px;
+  width: 90%;
   outline: none;
   border: 1px solid grey;
   border-bottom: 2px solid white;
@@ -45,9 +51,11 @@ p {
 
 #form {
   position: absolute;
-  top: 250px;
-  left: 250px;
+  width: 300px;
+  top: 56%;
+  left: 50%;
   text-align: center;
+  transform: translate(-50%, -50%);
 }
 
 #input::placeholder {
@@ -64,14 +72,22 @@ p {
   font-size: 32px;
   color: greenyellow;
   margin-bottom: 3px;
-  width: 300px;
+  width: 90%;
   text-align: center;
 }
 
 #submitting {
-  width: 300px;
+  width: 90%;
   font-size: 32px;
   color: white;
   margin-bottom: 3px;
   text-align: center;
+}
+
+/* Browsers 800px and below just for view because it only works with a keyboard */
+@media screen and (max-width: 800px) {
+  canvas {
+    min-width: 100vw;
+    min-height: 100vh;
+  }
 }
