@@ -1,0 +1,66 @@
+{
+  "name": "rpg-shooter-game",
+  "version": "1.0.0",
+  "description": "This project is an RPG shooter game built with Phaser 3, a JavaScript game framework designed to create 2D games.",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --config webpack/prod.js ",
+    "start": "webpack-dev-server --config webpack/base.js --open",
+    "test": "jest"
+  },
+  "jest": {
+    "setupFiles": [
+      "jest-canvas-mock"
+    ],
+    "setupFilesAfterEnv": [
+      "jest-expect-subclass"
+    ],
+    "moduleNameMapper": {
+      "\\.(gif|ttf|eot|svg|png|mp3)$": "<rootDir>/test/mocks/fileMock.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mupa1/rpg-shooter-game.git"
+  },
+  "keywords": [],
+  "author": "Mupa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mupa1/rpg-shooter-game/issues"
+  },
+  "homepage": "https://github.com/Mupa1/rpg-shooter-game#readme",
+  "devDependencies": {
+    "@babel/core": "^7.7.2",
+    "@babel/plugin-transform-regenerator": "^7.12.1",
+    "@babel/plugin-transform-runtime": "^7.12.1",
+    "@babel/preset-env": "^7.7.1",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.0.6",
+    "babel-polyfill": "^6.26.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "file-loader": "^4.3.0",
+    "jest": "^26.6.3",
+    "jest-canvas-mock": "^2.3.0",
+    "jest-expect-subclass": "^1.0.1",
+    "raw-loader": "^3.1.0",
+    "stylelint": "^13.3.3",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-csstree-validator": "^1.9.0",
+    "stylelint-scss": "^3.17.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0"
+  },
+  "dependencies": {
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^5.0.1",
+    "html-webpack-plugin": "^3.2.0",
+    "phaser": "^3.20.1",
+    "style-loader": "^2.0.0",
+    "terser-webpack-plugin": "^2.2.1",
+    "webpack": "^4.41.2",
+    "webpack-merge": "^4.2.2"
+  }
+}
